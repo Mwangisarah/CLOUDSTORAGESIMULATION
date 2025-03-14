@@ -1,0 +1,20 @@
+<!-- templates/update.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="update">
+        <h2>Update File</h2>
+        <p>Change the filename for: <strong>{{ file.filename }}</strong></p>
+        
+        <form method="POST" action="{{ url_for('update_file', file_id=file.id) }}">
+            <div class="form-group">
+                <label for="filename">New Filename:</label>
+                <input type="text" id="filename" name="filename" value="{{ file.filename }}" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="button">Update</button>
+                <a href="{{ url_for('list_files') }}" class="button secondary">Cancel</a>
+            </div>
+        </form>
+    </section>
+{% endblock %}

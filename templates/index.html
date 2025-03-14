@@ -1,0 +1,25 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="welcome">
+        <h2>Welcome to Flask Cloud Storage</h2>
+        <p>This application simulates a basic cloud storage system where you can:</p>
+        <div class="features">
+            <div class="feature">
+                <h3>Upload Files</h3>
+                <p>Simulate uploading a file by entering a filename</p>
+                <a href="{{ url_for('upload_file') }}" class="button">Upload a File</a>
+            </div>
+            <div class="feature">
+                <h3>View Files</h3>
+                <p>See all your stored files in one place</p>
+                <a href="{{ url_for('list_files') }}" class="button">View Files</a>
+            </div>
+            <div class="feature">
+                <h3>Manage Files</h3>
+                <p>Update file names or delete files you no longer need</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
